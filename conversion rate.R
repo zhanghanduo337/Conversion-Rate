@@ -1,16 +1,16 @@
+setwd('/Users/zhanghanduo/Desktop/data/conversion\ rate')
 rm(list = ls())
 library(dplyr)
 library(ggplot2)
 library(pROC)
-library("readxl")
-library("tidyverse")
+library(tidyverse)
 library(randomForest)
 library(gbm)
 
 ############################################################################################################
 ### import data
 
-df = read.csv('/Users/zhanghanduo/Desktop/data/conversion_data.csv')
+df = read.csv('conversion_data.csv')
 
 #############################exploratory data analysis
 
