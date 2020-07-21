@@ -19,4 +19,22 @@ I looked at the distribution the data and the values counts for the various nume
 ## Random Forest
 Some highlights from random forest model.
 
-![variable importance plot(4 variables)](variable importance plot(4 variables).png)
+![variable importance plot](variable_importance_plot_5_variables.png)
+
+## Boosted Trees
+Some highlights from boosted trees model.
+
+![partial dependence plot for 'age'](boosted_trees-age.png)
+![partial dependence plot for 'country'](boosted_trees-country.png)
+![partial dependence plot for 'total_pages_visited'](boosted_trees-total_pages_visited.png)
+
+## Conclusion
+Users in Germany seems to have the highest marginal effect on conversion rate 
+among all the countries, whereas China has the lowest, which is significantly
+lower than other countries. More data ought to be collected to find out what's going
+on in China, maybe it's the local competitors, or government policy, or commercials 
+and sources channels. However, market in Germany should be where we put most our
+focus on. Specifially, we should be more focus on the ads, seo source in Germany, despite
+of the fact that source is seemingly less important than other features. Additionally,
+we should try to attract more young, new uses in Germany who, according to the result,
+can result in high conversion rate.
