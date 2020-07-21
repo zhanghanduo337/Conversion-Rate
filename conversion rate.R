@@ -1,20 +1,20 @@
+setwd('/Users/zhanghanduo/Desktop/data/conversion\ rate')
 rm(list = ls())
 library(dplyr)
 library(ggplot2)
 library(pROC)
-library("readxl")
-library("tidyverse")
+library(tidyverse)
 library(randomForest)
 library(gbm)
 
 ############################################################################################################
 ### import data
 
-df = read.csv('/Users/zhanghanduo/Desktop/data/conversion_data.csv')
+df = read.csv('conversion_data.csv')
 
 #############################exploratory data analysis
 
-View(df)
+#View(df)
 attach(df)
 mean(df$converted) #average conversion rate 0.03224898
 summary(df)#age and total_pages_visited seem to have outliers 
@@ -67,7 +67,7 @@ dim(df) #316196 * 6
 
 library(randomForest)
 set.seed(1)
-train = sample(1:nrow(df),nrow(df)/2)
+train = sample(1:nrow(df),nrow(df)*2/3)
 rf.conv = randomForest(converted~.,data = df,subset = train,mtry = 3,importance = TRUE)
 
 conv_pred_rf = predict(rf.conv,df[-train,])
@@ -98,8 +98,7 @@ rf_pred_2[conv_pred_rf_2>0.2]=1
 # which one of type I error and type II error is more serious?
 table(rf_pred_2,df[-train,]$converted)
 mean(rf_pred_2==df[-train,]$converted) #error rate: 4%
-op = par(mfrow=c(1,1))
-partialPlot(rf_pred_2,df[train,],country,1)
+
 
 #############################Boosted trees
 
