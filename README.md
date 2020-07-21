@@ -9,3 +9,14 @@ Your project is to:
 
 Note:
 comments are embedded in the code file
+
+## EDA
+I looked at the distribution the data and the values counts for the various numeric and categorical variables. Below are some highlights discoveries from the table. 
+
+![age_distribution](age_distribution.png) 
+![pagevist_distribution](pagevist_distribution.png)
+
+## Random Forest
+Some highlights from random forest model.
+
+![variable importance plot(4 variables)](variable importance plot(4 variables).png)
